@@ -11,5 +11,8 @@
             "src": "(.*)",
             "dest": "app.py"
         }
-    ]
+    ],
+    "output": {
+        "path": "dist/my-app"
+      }
   }
