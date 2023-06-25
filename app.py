@@ -178,5 +178,5 @@ def update_charts(entity, product, start_date, end_date):
     return approved_chart_figure, finished_chart_figure
 
 
-if __name__ == "__main__":
-    app.run_server(debug=True)
+# if __name__ == "__main__":
+#     app.run_server(debug=True)
