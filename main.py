@@ -1,5 +1,5 @@
 import pandas as pd
-from dash import Dash, Input, Output, dcc, html
+from dash import Dash, server, Input, Output, dcc, html
 import os
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
