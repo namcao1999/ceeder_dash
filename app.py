@@ -25,6 +25,7 @@ external_stylesheets = [
 
 
 app = Dash(__name__, external_stylesheets=external_stylesheets)
+server = app.server
 app.title = "Exchange Analytics"
 
 app.layout = html.Div(
@@ -179,4 +180,5 @@ def update_charts(entity, product, start_date, end_date):
     return approved_chart_figure, finished_chart_figure
 
 
-server = app.server
+if __name__ == "__main__":
+    app.run_server(debug=True)
