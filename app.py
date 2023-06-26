@@ -13,7 +13,6 @@ data = (
 entities = data["Entity"].sort_values().unique()
 products = data["Product"].sort_values().unique()
 
-
 external_stylesheets = [
     {
         "href": (
@@ -176,7 +175,3 @@ def update_charts(entity, product, start_date, end_date):
         },
     }
     return approved_chart_figure, finished_chart_figure
-
-
-if __name__ == "__main__":
-    app.run_server(debug=True)
