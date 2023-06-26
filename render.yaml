@@ -1,7 +1,7 @@
 services:
   - name: dash-app
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn -b 0.0.0.0:$PORT app:app.server
+    startCommand: gunicorn -b 0.0.0.0:$PORT main:app
     env:
       - key: PYTHONUNBUFFERED
         value: "1"
