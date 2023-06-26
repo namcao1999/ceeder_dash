@@ -1,6 +1,7 @@
 import pandas as pd
 from dash import Dash, Input, Output, dcc, html
 import os
+from flask import Flask
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 data_path = os.path.join(current_dir, "ELDs_result.xlsx")
@@ -22,8 +23,8 @@ external_stylesheets = [
         "rel": "stylesheet",
     },
 ]
-# server = Dash(__name__)
-app = Dash(__name__, external_stylesheets=external_stylesheets)
+server = Flask(__name__)
+app = Dash(server=server, external_stylesheets=external_stylesheets)
 app.title = "Exchange Analytics"
 
 app.layout = html.Div(
