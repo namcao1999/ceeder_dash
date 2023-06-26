@@ -22,7 +22,8 @@ external_stylesheets = [
         "rel": "stylesheet",
     },
 ]
-app = Dash(__name__, external_stylesheets=external_stylesheets)
+server = Flask(__name__)
+app = Dash(server=server, external_stylesheets=external_stylesheets)
 app.title = "Exchange Analytics"
 
 app.layout = html.Div(
@@ -175,3 +176,7 @@ def update_charts(entity, product, start_date, end_date):
         },
     }
     return approved_chart_figure, finished_chart_figure
+
+
+if __name__ == "__main__":
+    app.run_server(debug=True)
